@@ -1,0 +1,1794 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MefContrib.Models.Provider</name>
+    </assembly>
+    <members>
+        <member name="T:MefContrib.Models.Provider.Validation.Validator`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T">The type of the argument which it going to be validated.</typeparam>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Validation.Validator`1.#ctor(`0,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Validation.Validator`1"/> class,
+            using the provided taget and name.
+            </summary>
+            <param name="value"></param>
+            <param name="name"></param>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Validation.Validator`1.Name">
+            <summary>
+            Gets or sets the name of the argument that is being validated.
+            </summary>
+            <value>A <see cref="T:System.String"/> containing the name of the argument.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Validation.Validator`1.Value">
+            <summary>
+            Gets or sets the value of the argument that is being validated.
+            </summary>
+            <value>An object of type specified by the <typeparam name="T"></typeparam> parameter.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.PartDescription">
+            <summary>
+            Defines an abstract description of an part.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.PartDescription.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.PartDescription"/> class.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.PartDescription.#ctor(System.String,System.Collections.ObjectModel.Collection{MefContrib.Models.Provider.ExportDescription},System.Collections.ObjectModel.Collection{MefContrib.Models.Provider.ImportDescription})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.PartDescription"/> class, using
+            the provided initial values.
+            </summary>
+            <param name="typeName">The name of the type that the part is associated with.</param>
+            <param name="exports">The exports that are defined by the part.</param>
+            <param name="imports">The imports that are defined by the part.</param>
+        </member>
+        <member name="P:MefContrib.Models.Provider.PartDescription.Exports">
+            <summary>
+            Gets or sets the imports associated with the part.
+            </summary>
+            <value>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.PartDescription.Imports">
+            <summary>
+            Gets or sets the exports associated with the part.
+            </summary>
+            <value>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.PartDescription.TypeName">
+            <summary>
+            Gets or sets the name of the type the part is assocated with.
+            </summary>
+            <value>A <see cref="T:System.String"/> containing the name the part is associated with.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImport.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImport"/> class.
+            </summary>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImport.AllowDefault">
+            <summary>
+            Gets or sets if default values are allowed.
+            </summary>
+            <value>A string containing the name of he contract.</value>
+            <remarks>The default value is <see langword="false" />.</remarks>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImport.ContractName">
+            <summary>
+            Gets or sets the name of the contract.
+            </summary>
+            <value>A string containing the name of the contract.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImport.ContractType">
+            <summary>
+            Gets or sets the type of the contract.
+            </summary>
+            <value>A string containing the type of the contract.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImport.IsPrerequisite">
+            <summary>
+            Gets or sets if default values are allowed.
+            </summary>
+            <value>A string containing the name of he contract.</value>
+            <remarks>The default value is <see langword="false" />.</remarks>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImport.IsRecomposable">
+            <summary>
+            Gets or sets if default values are allowed.
+            </summary>
+            <value>A string containing the name of he contract.</value>
+            <remarks>The default value is <see langword="false" />.</remarks>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImport.Member">
+            <summary>
+            Gets or sets the name of the member.
+            </summary>
+            <value>A string containing the name of the member.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImport.Metadata">
+            <summary>
+            Gets a collection of all the metadata defined for the <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImport"/>.
+            </summary>
+            <value>A <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationMetadataCollection"/> object.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.ComposableType">
+            <summary>
+            Provides an abstraction for working with a type on a reflection level.
+            </summary>
+        </member>
+        <member name="T:MefContrib.Models.Provider.ComposableMember">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ComposableMember.#ctor(System.Reflection.MemberInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.ComposableMember"/> class, for the
+            specified <see cref="T:System.Reflection.MemberInfo"/> instance.
+            </summary>
+            <param name="member">The member to make exportable.</param>
+        </member>
+        <member name="F:MefContrib.Models.Provider.ComposableMember._elementType">
+            <summary>
+            Gets the generic element type of the of the <see cref="T:MefContrib.Models.Provider.ComposableMember"/>.
+            </summary>
+            <value>A <see cref="T:System.Type"/> object</value>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ComposableMember.Create(System.Reflection.MemberInfo)">
+            <summary>
+            Creates a new <see cref="T:MefContrib.Models.Provider.ComposableMember"/> for the specified <paramref name="member"/>.
+            </summary>
+            <param name="member">The <see cref="T:System.Reflection.MemberInfo"/> to create the <see cref="T:MefContrib.Models.Provider.ComposableMember"/> for.</param>
+            <returns>A <see cref="T:MefContrib.Models.Provider.ComposableMember"/> object.</returns>
+            <exception cref="T:System.ArgumentNullException">The specified value for the <see cref="!:member"/> parameter cannot be null.</exception>
+            <exception cref="T:System.InvalidOperationException">The specified member was of an unsupported <see cref="T:System.Reflection.MemberTypes"/>.</exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ComposableMember.GetImportValueFromExports(System.Collections.Generic.IEnumerable{System.ComponentModel.Composition.Primitives.Export})">
+            <summary>
+            
+            </summary>
+            <param name="exports"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ComposableMember.GetValue(System.Object)">
+            <summary>
+            Gets the value of the member.
+            </summary>
+            <param name="instance">The instance to get the value from.</param>
+            <returns>The value of the member.</returns>
+            <exception cref="T:System.InvalidOperationException">No function for retrieving the value has been set.</exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ComposableMember.SetValue(System.Object,System.Object)">
+            <summary>
+            Sets the value of the member to the specified value.
+            </summary>
+            <param name="instance">The instance to assign the specified value to.</param>
+            <param name="value">The value to assign to the property.</param>
+            <exception cref="T:System.InvalidOperationException">Either the member is not writeable or oo function for assigning the value has been set.</exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ComposableMember.GetElementType">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ComposableMember.GetImportValueCollection(System.Collections.Generic.IEnumerable{System.ComponentModel.Composition.Primitives.Export})">
+            <summary>
+            
+            </summary>
+            <param name="exports"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ComposableMember.GetImportValueSingle(System.Collections.Generic.IEnumerable{System.ComponentModel.Composition.Primitives.Export})">
+            <summary>
+            
+            </summary>
+            <param name="exports"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ComposableMember.ToLazyType">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMember.DeclaringType">
+            <summary>
+            Gets the type of the object which the exportable member belongs to.
+            </summary>
+            <value>A <see cref="T:System.Type"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMember.IsLazyType">
+            <summary>
+            Gets a value indicating whether or not type of the <see cref="T:MefContrib.Models.Provider.ComposableMember"/> is of a lazy type or not.
+            </summary>
+            <value><see langword="true"/> if it is of a known lazy type; otherwise <see langword="false"/>.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMember.IsReadable">
+            <summary>
+            Gets a value indicating whether or not a value can be retrieved from the member.
+            </summary>
+            <value><see langword="true" /> if a value can be retrieved; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMember.IsInstanceNeeded">
+            <summary>
+            Gets a value indicating whether or not an instance is needed for the value to be retrieved or assigned.
+            </summary>
+            <value><see langword="true" /> if an instance is needed; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMember.IsWritable">
+            <summary>
+            Gets a value indicating whether or not a value can be assigned to the member.
+            </summary>
+            <value><see langword="true" /> if a value can be assigned; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMember.Member">
+            <summary>
+            Gets or sets the member that is wrapped by the <see cref="T:MefContrib.Models.Provider.ComposableMember"/>.
+            </summary>
+            <value>A <see cref="T:System.Reflection.MemberInfo"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMember.ReturnType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of the return value of the <see cref="T:MefContrib.Models.Provider.ComposableMember"/>.
+            </summary>
+            <value>A <see cref="T:System.Type"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMember.ValueGetter">
+            <summary>
+            Gets or sets the function used to get the value of the member.
+            </summary>
+            <value>A <see cref="T:System.Func`2"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMember.ValueSetter">
+            <summary>
+            Gets or sets the function used to assign a value to the member.
+            </summary>
+            <value>A <see cref="T:System.Action`2"/> object.</value>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ComposableType.#ctor(System.Reflection.MemberInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.ComposableType"/> class
+            for the specified <see cref="T:System.Reflection.MemberInfo"/>.
+            </summary>
+            <param name="member">The member to make composable.</param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ComposableType.GetValue(System.Object)">
+            <summary>
+            Gets the value of the member.
+            </summary>
+            <param name="instance">The instance to get the value from.</param>
+            <returns>The value of the member.</returns>
+            <exception cref="T:System.InvalidOperationException">No function for retrieving the value has been set.</exception>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableType.DeclaringType">
+            <summary>
+            Gets the type of the object which the exportable member belongs to.
+            </summary>
+            <value>A <see cref="T:System.Type"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableType.IsLazyType">
+            <summary>
+            Gets a value indicating whether or not type of the <see cref="T:MefContrib.Models.Provider.ComposableType"/> is of a lazy type or not.
+            </summary>
+            <value><see langword="true"/> if it is of a known lazy type; otherwise <see langword="false"/>.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableType.IsReadable">
+            <summary>
+            Gets a value indicating whether or not a value can be retrieved from the member.
+            </summary>
+            <value><see langword="true" /> if a value can be retrieved; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableType.IsInstanceNeeded">
+            <summary>
+            Gets a value indicating whether or not an instance is needed for the value to be retrieved or assigned.
+            </summary>
+            <value><see langword="true" /> if an instance is needed; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableType.IsWritable">
+            <summary>
+            Gets a value indicating whether or not a value can be assigned to the member.
+            </summary>
+            <value><see langword="true" /> if a value can be assigned; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableType.ReturnType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of the return value of the <see cref="T:MefContrib.Models.Provider.ComposableType"/>.
+            </summary>
+            <value>A <see cref="T:System.Type"/> object.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.ProviderComposablePart">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ProviderComposablePart.#ctor(MefContrib.Models.Provider.ProviderComposablePartDefinition)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.ProviderComposablePart"/> class,
+            using the specified definition.
+            </summary>
+            <param name="definition">The definitions to use when creating the composable part.</param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ProviderComposablePart.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.ProviderComposablePart"/> class,
+            for the specified object instance.
+            </summary>
+            <param name="instance">The object instance to create the composable part for.</param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ProviderComposablePart.#ctor(System.Object,MefContrib.Models.Provider.ProviderComposablePartDefinition)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.ProviderComposablePart"/> class,
+            for the specified object instance, using the specified definition
+            </summary>
+            <param name="instance">The object instance to create the composable part for.</param>
+            <param name="definition">The definitions to use when creating the composable part.</param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ProviderComposablePart.GetActivatedInstance(MefContrib.Models.Provider.ComposableMember)">
+            <summary>
+            Creates a new instance of the <see cref="T:MefContrib.Models.Provider.ComposableMember"/>, specified by the
+            <param name="exportable"></param> parameter, if it's needed.
+            </summary>
+            <param name="exportable">The exportable member to create an instance of, if it is required.</param>
+            <returns>An instance of the object specified by the provided <see cref="T:MefContrib.Models.Provider.ComposableMember"/>.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ProviderComposablePart.GetExportedValue(System.ComponentModel.Composition.Primitives.ExportDefinition)">
+            <summary>
+            
+            </summary>
+            <param name="definition"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">The supplied export definition was of an unknown type.</exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ProviderComposablePart.OnComposed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ProviderComposablePart.SatisfyPostCompositionImports">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ProviderComposablePart.SetImport(System.ComponentModel.Composition.Primitives.ImportDefinition,System.Collections.Generic.IEnumerable{System.ComponentModel.Composition.Primitives.Export})">
+            <summary>
+            
+            </summary>
+            <param name="definition"></param>
+            <param name="exports"></param>
+            <exception cref="T:System.InvalidOperationException">The supplied import definition was of an unknown type.</exception>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ProviderComposablePart.Definition">
+            <summary>
+            Gets the definition used to define the composable part.
+            </summary>
+            <value>A <see cref="T:MefContrib.Models.Provider.ProviderComposablePartDefinition"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ProviderComposablePart.ExportDefinitions">
+            <summary>
+            Gets a list of all known <see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition"/> objects for the part.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.IEnumerable`1"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ProviderComposablePart.ImportDefinitions">
+            <summary>
+            Gets a list of all known <see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition"/> objects for the part.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.IEnumerable`1"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ProviderComposablePart.ImportedValues">
+            <summary>
+            Gets or sets a dictionary of all the values for nested imports.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.Dictionary`2"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ProviderComposablePart.Instance">
+            <summary>
+            Gets or sets the instance object of the <see cref="T:MefContrib.Models.Provider.ProviderComposablePart"/>.
+            </summary>
+            <value>An <see cref="T:System.Object"/> containing the instance.</value>
+            <remarks>
+            This value is either set from the constructor which accepts an object instance or from
+            the <see cref="M:MefContrib.Models.Provider.ProviderComposablePart.GetActivatedInstance(MefContrib.Models.Provider.ComposableMember)"/> method.
+            </remarks>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ProviderComposablePart.IsComposed">
+            <summary>
+            Gets or sets a value indicating whether or not if all the imports of the part has been
+            composed by the composition engine.
+            </summary>
+            <value><see langword="true" /> if composition is done; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.MethodInfoExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.MethodInfoExtensions.CreateDelegate(System.Reflection.MethodInfo,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="method"></param>
+            <param name="instance"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MefContrib.Models.Provider.ComposableField">
+            <summary>
+            Provides an abstraction for working with a field on a reflection level.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ComposableField.#ctor(System.Reflection.MemberInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.ComposableField"/> class
+            for the specified <see cref="T:System.Reflection.MemberInfo"/>.
+            </summary>
+            <param name="member">The member to make composable.</param>
+            <exception cref="T:System.InvalidOperationException">The specified value for the member parameter was not a <see cref="T:System.Reflection.FieldInfo"/> instance.</exception>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableField.Field">
+            <summary>
+            Gets the reference to the field.
+            </summary>
+            <value>A <see cref="T:System.Reflection.FieldInfo"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableField.IsLazyType">
+            <summary>
+            Gets a value indicating whether or not type of the <see cref="T:MefContrib.Models.Provider.ComposableField"/> is of a lazy type or not.
+            </summary>
+            <value><see langword="true"/> if it is of a known lazy type; otherwise <see langword="false"/>.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableField.IsReadable">
+            <summary>
+            Gets a value indicating whether or not a value can be retrieved from the member.
+            </summary>
+            <value><see langword="true" /> if a value can be retrieved; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableField.IsInstanceNeeded">
+            <summary>
+            Gets a value indicating whether or not an instance is needed for the value to be retrieved or assigned.
+            </summary>
+            <value><see langword="true" /> if an instance is needed; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableField.IsWritable">
+            <summary>
+            Gets a value indicating whether or not a value can be assigned to the member.
+            </summary>
+            <value><see langword="true" /> if a value can be assigned; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableField.ReturnType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of the return value of the <see cref="T:MefContrib.Models.Provider.ComposableField"/>.
+            </summary>
+            <value>A <see cref="T:System.Type"/> object.</value>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.Decorator.#ctor(MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.Decorator"/> class, using
+            the specified <see cref="P:MefContrib.Models.Provider.Definitions.Fluent.Decorator.Provider"/> instance.
+            </summary>
+            <param name="provider">The <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider"/> object to decorate.</param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.Decorator.Export``1">
+            <summary>
+            Registers an export with no return value.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> that the export is registered for.</typeparam>
+            <returns>A <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator"/> object.</returns>
+            <remarks>This overload handles methods with no return (void) value.</remarks>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.Decorator.Export``1(System.Linq.Expressions.Expression{System.Action{``0}})">
+            <summary>
+            Registers an export with no return value.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> that the export is registered for.</typeparam>
+            <param name="exportExpression">A lambda expression used to identify the export.</param>
+            <returns>A <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator"/> object.</returns>
+            <remarks>This overload handles methods with no return (void) value.</remarks>
+            <exception cref="T:System.ArgumentNullException">The specified value for the <paramref name="exportExpression"/> parameter was <see langword="null"/>.</exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.Decorator.Export``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Registers an export with a return value.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> that the export is being registered for.</typeparam>
+            <param name="exportExpression">A lambda expression used to identify the export.</param>
+            <returns>An <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator"/> object.</returns>
+            <remarks>This overload handled properties, fields, methods with a return value and classes.</remarks>
+            <exception cref="T:System.ArgumentNullException">The specified value for the <paramref name="exportExpression"/> parameter was <see langword="null"/>.</exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.Decorator.Import``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Registers an import.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> that the import is being registered for.</typeparam>
+            <param name="importExpression">A lambda expression used to identify the import.</param>
+            <returns>An <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator"/></returns> object.
+            <exception cref="T:System.ArgumentNullException">The specified value for the <paramref name="importExpression"/> parameter was <see langword="null"/>.</exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.Decorator.GetMemberName(System.Linq.Expressions.Expression)">
+            <summary>
+            Retrieves the name of the targeted member in an expression tree.
+            </summary>
+            <param name="expression">The <see cref="T:System.Linq.Expressions.Expression"/> to get the name from.</param>
+            <returns>The name of the member if it could be located; otherwise <see langword="null"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">The provided value for the <paramref name="expression"/> parameter was <see langword="null"/>.</exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.Decorator.GetPart(System.Type)">
+            <summary>
+            Retrieves the part for the specified <see cref="T:System.Type"/>.
+            </summary>
+            <param name="typeOfPart">The <see cref="T:System.Type"/> to get the part for.</param>
+            <returns>A <see cref="T:MefContrib.Models.Provider.PartDescription"/> object.</returns>
+            <exception cref="T:System.ArgumentNullException">The specified value for the <paramref name="typeOfPart"/> parameter was null.</exception>
+            <remarks>If the part could not be found for the type then it is created and stored in the cache for future requests.</remarks>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Fluent.Decorator.CurrentPart">
+            <summary>
+            Gets the currently active <see cref="T:MefContrib.Models.Provider.PartDescription"/> object.
+            </summary>
+            <value>A <see cref="T:MefContrib.Models.Provider.PartDescription"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Fluent.Decorator.Provider">
+            <summary>
+            Gets the <see cref="P:MefContrib.Models.Provider.Definitions.Fluent.Decorator.Provider"/> object which is being decorated.
+            </summary>
+            <value>A <see cref="P:MefContrib.Models.Provider.Definitions.Fluent.Decorator.Provider"/> object.</value>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator.#ctor(MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator"/> class, using
+            the specified <see cref="N:MefContrib.Models.Provider"/> instance.
+            </summary>
+            <param name="provider">The <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider"/> which is being decorated for an import.</param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator.AddRequiredMetadata(System.String)">
+            <summary>
+            Adds a required metadata element name to the currect <see cref="T:MefContrib.Models.Provider.ImportDescription"/>.
+            </summary>
+            <param name="name">The name of the metadata element.</param>
+            <returns>An <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator"/> object.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator.AllowDefault(System.Boolean)">
+            <summary>
+            Gets a value indicating whether the property or field will be set to its type's default value when 
+            an export with the contract name is not present in the container.
+            </summary>
+            <param name="allowDefault"><see langword="true"/> if default values are permitted; otherwise <see langword="false"/>.</param>
+            <returns>An <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator"/> object.</returns>
+            <remarks>The default value is <see langword="true"/>.</remarks>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator.IsPrerequisite(System.Boolean)">
+            <summary>
+            Gets a value indicating whether the import definition is required to be satisfied before a part
+            can start producing exported objects.
+            </summary>
+            <param name="isPrerequisite"><see langword="true"/> if the import is a prerequisite; otherwise <see langword="false"/>.</param>
+            <returns>An <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator"/> object.</returns>
+            <remarks>The default value is <see langword="false"/>.</remarks>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator.IsRecomposable(System.Boolean)">
+            <summary>
+            Gets a value indicating whether the import definition can be satisfied multiple times.
+            </summary>
+            <param name="isRecomposable"><see langword="true"/> if the import is recomposable; otherwise <see langword="false"/>.</param>
+            <returns>An <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator"/> object.</returns>
+            <remarks>The default value is <see langword="false"/>.</remarks>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator.WithContract(System.String)">
+            <summary>
+            Assigns a contract to the current <see cref="T:MefContrib.Models.Provider.ImportDescription"/>.
+            </summary>
+            <param name="contract">A <see cref="T:System.String"/> containing the contract.</param>
+            <returns>An <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator"/> object.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator.WithContract``1">
+            <summary>
+            Assigns a contract to the current <see cref="T:MefContrib.Models.Provider.ImportDescription"/>.
+            </summary>
+            <returns>An <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator"/> object.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationMetadataCollection.AsDictionary">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationMetadataCollection.CreateNewElement">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationMetadataCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:MefContrib.Models.Provider.ConditionalCompositionContainer">
+            <summary>
+            Defines a <see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer"/> with the capability of applying a condition on exports
+            which matches any of the registered contracts.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ConditionalCompositionContainer.#ctor(System.ComponentModel.Composition.Primitives.ComposablePartCatalog)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.ConditionalCompositionContainer"/> class, using
+            the specified <see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer"/>.
+            </summary>
+            <param name="catalog">The catalog to add to the container.</param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ConditionalCompositionContainer.Register``1(System.Linq.Expressions.Expression{System.Action{``0}})">
+            <summary>
+            Registers a member with the container.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> that the member, identified by the <paramref name="expression"/> parameter, belongs to.</typeparam>
+            <param name="expression">The expression used to identify the targeted member.</param>
+            <returns>A <see cref="T:MefContrib.Models.Provider.ConditionalCompositionContainer"/> object.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ConditionalCompositionContainer.Register``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Registers a member with the container.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> that the member, identified by the <paramref name="expression"/> parameter, belongs to.</typeparam>
+            <param name="expression">The expression used to identify the targeted member.</param>
+            <returns>A <see cref="T:MefContrib.Models.Provider.ConditionalCompositionContainer"/> object.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ConditionalCompositionContainer.Where(System.Func{System.ComponentModel.Composition.Primitives.Export,System.Boolean})">
+            <summary>
+            Assigns a condition to the previously registered contract.
+            </summary>
+            <param name="condition">A <see cref="T:System.Func`2"/> object containing the condition to apply to the contract.</param>
+            <returns>A <see cref="T:MefContrib.Models.Provider.ConditionalCompositionContainer"/> object.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ConditionalCompositionContainer.ExtractMemberFromExpression(System.Linq.Expressions.Expression)">
+            <summary>
+            Extracts the name of the member from the provided expression tree.
+            </summary>
+            <param name="expression">The expression to extract the name from.</param>
+            <returns>A <see cref="T:System.String"/> containing the name of the member if it could be extracted; otherwise <see langword="null"/>.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ConditionalCompositionContainer.GetExportsCore(System.ComponentModel.Composition.Primitives.ImportDefinition,System.ComponentModel.Composition.Hosting.AtomicComposition)">
+            <summary>
+            Gets the exports which matches the provided <see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition"/>.
+            </summary>
+            <param name="definition">The import definition to find exports for.</param>
+            <returns>A <see cref="T:System.Collections.Generic.IEnumerable`1"/> object, containing the matched exports.</returns>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ConditionalCompositionContainer.Conditions">
+            <summary>
+            Gets or sets filters which are availble to the container.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.IDictionary`2"/> object. The of the dictionairy should be the contract name.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.ProviderComposablePartDefinition">
+            <summary>
+            Defines the class for composable part definitions, which describe, and allow the creation
+            of, <see cref="T:MefContrib.Models.Provider.ProviderComposablePart"/> objects.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ProviderComposablePartDefinition.#ctor(MefContrib.Models.Provider.DefinitionProviderPartCatalog,System.String,System.Collections.Generic.IEnumerable{MefContrib.Models.Provider.ProviderExportDefinition},System.Collections.Generic.IEnumerable{MefContrib.Models.Provider.ProviderImportDefinition})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.ProviderComposablePartDefinition"/> class.
+            </summary>
+            <param name="catalog">The <see cref="T:MefContrib.Models.Provider.DefinitionProviderPartCatalog"/> that the definition is associated with.</param>
+            <param name="exportDefinitions">A collection of <see cref="T:MefContrib.Models.Provider.ProviderExportDefinition"/> objects.</param>
+            <param name="importDefinitions">A collection of <see cref="T:MefContrib.Models.Provider.ProviderImportDefinition"/> objects.</param>
+            <param name="typeName">The fully qualified name of the type for which the definition is created.</param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ProviderComposablePartDefinition.CreatePart">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ProviderComposablePartDefinition.Catalog">
+            <summary>
+            Gets the catalog associated with the definition.
+            </summary>
+            <value>A <see cref="T:MefContrib.Models.Provider.DefinitionProviderPartCatalog"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ProviderComposablePartDefinition.Type">
+            <summary>
+            Gets the type that the definition was created for.
+            </summary>
+            <value>A <see cref="P:MefContrib.Models.Provider.ProviderComposablePartDefinition.Type"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ProviderComposablePartDefinition.ExportDefinitions">
+            <summary>
+            Gets a collection of all the export definitions that was discovered for the type.
+            </summary>
+            <value>A collection of <see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition"/> objects.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ProviderComposablePartDefinition.ImportDefinitions">
+            <summary>
+            Gets a collection of all the import definitions that was discovered for the type.
+            </summary>
+            <value>A collection of <see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition"/> objects.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationSection.Parts">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationMetadata.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImport"/> class.
+            </summary>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationMetadata.Name">
+            <summary>
+            Gets or sets the name of the metadata.
+            </summary>
+            <value>A string containing the name of the metadata.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationMetadata.Value">
+            <summary>
+            Gets or sets the value of the metadata.
+            </summary>
+            <value>A string containing the value of the metadata.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImportCollection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImportCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImportCollection"/>
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImportCollection.AsCollection">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImportCollection.CreateNewElement">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImportCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImportCollection.CollectionType">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImportCollection.ElementName">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MefContrib.Models.Provider.TypeExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.TypeExtensions.IsEnumerable(System.Type)">
+            <summary>
+            Checks if the type is enumerable.
+            </summary>
+            <param name="source">The type to inspect.</param>
+            <returns><see langword="true" /> if the type is enumerable; otherwise <see langword="false" />.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.TypeExtensions.IsLazyType(System.Type)">
+            <summary>
+            Checks if the type is of a known lazy type.
+            </summary>
+            <param name="source">The type to inspect.</param>
+            <returns><see langword="true" /> if <paramref name="source"/> is of a known lazy type; otherwise <see langword="false" />.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.TypeExtensions.ToLazyType(System.Type)">
+            <summary>
+            Creates an export object type from the specified type.
+            </summary>
+            <param name="source">The type for which the export type should be created.</param>
+            <returns>A <see cref="T:System.Lazy`2"/> type.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MefContrib.Models.Provider.TypeExtensions.ToLazyCollectionType(System.Type)" -->
+        <member name="T:MefContrib.Models.Provider.ExportDescription">
+            <summary>
+            Defines an abstract description of an export.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ExportDescription.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.ExportDescription"/> class.
+            </summary>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ExportDescription.ContractName">
+            <summary>
+            Gets or sets the name of the contact.
+            </summary>
+            <value>A <see cref="T:System.String"/> containing the name of the contract.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ExportDescription.ContractType">
+            <summary>
+            Gets or sets the type of the contract.
+            </summary>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ExportDescription.MemberName">
+            <summary>
+            Gets or sets the name of the member.
+            </summary>
+            <value>A <see cref="T:System.String"/> containing the name of the member.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ExportDescription.Metadata">
+            <summary>
+            Gets or sets the metadata associated with the export.
+            </summary>
+            <value>An <see cref="T:System.Collections.Generic.IDictionary`2"/> object.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.DefinitionProviderPartCatalog">
+            <summary>
+            Defines the base functionality of an immutable <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog"/> created
+            for an <see cref="T:MefContrib.Models.Provider.DefinitionProvider"/>.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.DefinitionProviderPartCatalog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.DefinitionProviderPartCatalog"/> class.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.DefinitionProviderPartCatalog.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.DefinitionProviderPartCatalog.GetDefinition(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="instance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.DefinitionProviderPartCatalog.GetComposablePartDefinitions">
+            <summary>
+            Gets a list of all composable part definitions which was discovered by the catalog.
+            </summary>
+            <returns>A <see cref="T:System.Collections.Generic.List`1"/> object.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.DefinitionProviderPartCatalog.GetExportDefinitions(MefContrib.Models.Provider.PartDescription)">
+            <summary>
+            Gets a list of all export definitions which belongs to the part.
+            </summary>
+            <param name="part">The <see cref="T:MefContrib.Models.Provider.PartDescription"/> object to get the export definitions form.</param>
+            <returns>A <see cref="T:System.Collections.Generic.List`1"/> object.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.DefinitionProviderPartCatalog.GetImportDefinitions(MefContrib.Models.Provider.PartDescription)">
+            <summary>
+            Gets a list of all import definitions which belongs to the part.
+            </summary>
+            <param name="part">The <see cref="T:MefContrib.Models.Provider.PartDescription"/> object to get the import definitions form.</param>
+            <returns>A <see cref="T:System.Collections.Generic.List`1"/> object.</returns>
+        </member>
+        <member name="P:MefContrib.Models.Provider.DefinitionProviderPartCatalog.Factory">
+            <summary>
+            Gets or sets the object factory that the catalog should use.
+            </summary>
+            <value>An <see cref="T:MefContrib.Models.Provider.ObjectFactory"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.DefinitionProviderPartCatalog.Parts">
+            <summary>
+            Gets the definitions for the parts that was discovered by the catalog.
+            </summary>
+            <value>An <see cref="T:System.Linq.IQueryable`1"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.DefinitionProviderPartCatalog.Provider">
+            <summary>
+            Gets the provider used by the catalog.
+            </summary>
+            <value>A <see cref="T:MefContrib.Models.Provider.DefinitionProvider"/> object.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.DefinitionLocator">
+            <summary>
+            A static cache for maintaining records of all known <see cref="T:MefContrib.Models.Provider.DefinitionProviderPartCatalog"/> objects
+            and their <see cref="T:MefContrib.Models.Provider.ProviderComposablePartDefinition"/> objects.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.DefinitionLocator.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:MefContrib.Models.Provider.DefinitionLocator"/> class.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.DefinitionLocator.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:MefContrib.Models.Provider.DefinitionLocator"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.DefinitionLocator.GetDefinition(System.Object)">
+            <summary>
+            Gets a definition for a specified object instance.
+            </summary>
+            <param name="instance">The object to get the definition for.</param>
+            <returns>A <see cref="T:MefContrib.Models.Provider.ProviderComposablePartDefinition"/> object if a definition could be found; otherwise <see langword="null"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">The value specified for the <paramref name="instance"/> parameter was <see langword="null"/>.</exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.DefinitionLocator.Register(MefContrib.Models.Provider.DefinitionProviderPartCatalog)">
+            <summary>
+            
+            </summary>
+            <param name="catalog"></param>
+            <exception cref="T:System.ArgumentNullException">The provided value for the <paramref name="catalog"/> parameter was <see langword="null"/>.</exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.DefinitionLocator.UnRegister(MefContrib.Models.Provider.DefinitionProviderPartCatalog)">
+            <summary>
+            
+            </summary>
+            <param name="catalog"></param>
+            <exception cref="T:System.ArgumentNullException">The provided value for the <paramref name="catalog"/> parameter was <see langword="null"/>.</exception>
+        </member>
+        <member name="P:MefContrib.Models.Provider.DefinitionLocator.Definitions">
+            <summary>
+            Gets a list of all known catalogs and their definitions.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.Dictionary`2"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.DefinitionLocator.Catalogs">
+            <summary>
+            Gets a list of all known <see cref="T:MefContrib.Models.Provider.DefinitionProviderPartCatalog"/> objects.
+            </summary>
+            <value>A <see cref="T:System.Collections.ObjectModel.Collection`1"/> object.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.Validation.ValidatorOfTExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Validation.ValidatorOfTExtensions.IsOfType``1(MefContrib.Models.Provider.Validation.Validator{``0},System.Type)">
+            <summary>
+            Ensures that the validated object is of a desired type.
+            </summary>
+            <typeparam name="T">The type of the argument which is being validated.</typeparam>
+            <param name="target">A reference to the object which is being validated.</param>
+            <param name="desiredType">The <see cref="T:System.Type"/> to ensure that the object is of.</param>
+            <exception cref="T:System.InvalidCastException">The target was not of the type specified by the <paramref name="desiredType"/> parameter.</exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Validation.ValidatorOfTExtensions.NotEmpty(MefContrib.Models.Provider.Validation.Validator{System.String})">
+            <summary>
+            Ensures that a string is not empty.
+            </summary>
+            <param name="target">A reference to the object which is being validated.</param>
+            <returns>A <see cref="T:MefContrib.Models.Provider.Validation.Validator`1"/> object.</returns>
+            <exception cref="T:System.ArgumentException">The lenght of the target string was zero.</exception>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Validation.ValidatorOfTExtensions.NotNull``1(MefContrib.Models.Provider.Validation.Validator{``0})">
+            <summary>
+            Ensures that a reference type is not null.
+            </summary>
+            <typeparam name="T">The type of the argument which is being validated.</typeparam>
+            <param name="target">A reference to the object which is being validated.</param>
+            <returns>A <see cref="T:MefContrib.Models.Provider.Validation.Validator`1"/> object.</returns>
+            <exception cref="T:System.ArgumentNullException">The value of the target object was null.</exception>
+        </member>
+        <member name="T:MefContrib.Models.Provider.ImportDescription">
+            <summary>
+            Defines an abstract description of an import.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ImportDescription.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.ImportDescription"/> class.
+            </summary>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ImportDescription.AllowDefault">
+            <summary>
+            Gets or sets a value indicating whether or not default values are allowed.
+            </summary>
+            <value><see langword="true" /> if a default value is allowed; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ImportDescription.ContractName">
+            <summary>
+            Gets or sets the name of the contact.
+            </summary>
+            <value>A <see cref="T:System.String"/> containing the name of the contract.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ImportDescription.ContractType">
+            <summary>
+            Gets or sets the type of the contract.
+            </summary>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ImportDescription.MemberName">
+            <summary>
+            Gets or sets the name of the import.
+            </summary>
+            <value>A <see cref="T:System.String"/> containing the name of the member.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ImportDescription.Prerequisite">
+            <summary>
+            Gets or sets a value indicating whether the import definition is required to be 
+            satisfied before a part can start producing exported objects.
+            </summary>
+            <value>
+            <see langword="true"/> if the <see cref="T:MefContrib.Models.Provider.ProviderImportDefinition"/> is required to be 
+            satisfied before a <see cref="T:MefContrib.Models.Provider.ProviderComposablePart"/> can start producing exported 
+            objects; otherwise, <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ImportDescription.Recomposable">
+            <summary>
+            Gets or sets a value indicating whether the import definition can be satisfied multiple times.
+            </summary>
+            <value>
+            <see langword="true"/> if the <see cref="T:MefContrib.Models.Provider.ProviderImportDefinition"/> can be satisfied 
+            multiple times throughout the lifetime of a <see cref="T:MefContrib.Models.Provider.ProviderComposablePart"/>, otherwise, 
+            <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ImportDescription.RequiredMetadata">
+            <summary>
+            Gets or sets a list of metadata names that the import needs to satisfy.
+            </summary>
+            <value>A <see cref="T:System.Collections.ObjectModel.Collection`1"/> object.</value>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExportCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExportCollection"/>
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExportCollection.CreateNewElement">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExportCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExportCollection.AsCollection">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExportCollection.CollectionType">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExportCollection.ElementName">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationCollection`1.#ctor(System.Object,System.String,System.Func{`0,System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationCollection`1"/>
+            </summary>
+            <param name="elementKey"></param>
+            <param name="elementName"></param>
+            <param name="innerCollection"></param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationCollection`1.CreateNewElement">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationCollection`1.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationCollection`1.InnerCollection">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationCollection`1.ElementName">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.CompositionBatchExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.CompositionBatchExtensions.AddProviderPart(System.ComponentModel.Composition.Hosting.CompositionBatch,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="batch"></param>
+            <param name="instance"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MefContrib.Models.Provider.Resources.ValidationErrors">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Resources.ValidationErrors.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Resources.ValidationErrors.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Resources.ValidationErrors.IsOfType">
+            <summary>
+              Looks up a localized string similar to The type of the parameter &apos;{0}&apos; was not of the type &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Resources.ValidationErrors.NotEmpty">
+            <summary>
+              Looks up a localized string similar to The length of the parameter &apos;{0}&apos; cannot be zero..
+            </summary>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Resources.ValidationErrors.NotNull">
+            <summary>
+              Looks up a localized string similar to The specified value for parameter &apos;{0}&apos; cannot be null..
+            </summary>
+        </member>
+        <member name="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationPart">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationPart.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationPart"/> class.
+            </summary>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationPart.Exports">
+            <summary>
+            Gets a collection of all the exports defined for the <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationPart"/>.
+            </summary>
+            <value>A <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExportCollection"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationPart.Imports">
+            <summary>
+            Gets a collection of all the imports defined for the <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationPart"/>.
+            </summary>
+            <value>A <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImportCollection"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationPart.Type">
+            <summary>
+            Gets or sets the name of the type.
+            </summary>
+            <value>A string containing the name of the type.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.Definitions.Attributed.ExportableAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Attributed.ExportableAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Attributed.ExportableAttribute"/> class, using
+            the provided contract type.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Attributed.ExportableAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Attributed.ExportableAttribute"/> class, using
+            the provided contract type.
+            </summary>
+            <param name="contractType"></param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Attributed.ExportableAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Attributed.ExportableAttribute"/> class, using
+            the provided contract name.
+            </summary>
+            <param name="contractName"></param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Attributed.ExportableAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Attributed.ExportableAttribute"/> class, using
+            the provided contract name.
+            </summary>
+            <param name="contractName"></param>
+            <param name="contractType"></param>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Attributed.ExportableAttribute.ContractName">
+            <summary>
+            Gets the name of the contract.
+            </summary>
+            <value>A <see cref="T:System.String"/> containing the name of the contract.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Attributed.ExportableAttribute.ContractType">
+            <summary>
+            Gets the contract type that is exported by the member that this attribute is attached to.
+            </summary>
+        </member>
+        <member name="T:MefContrib.Models.Provider.StringExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.StringExtensions.FormatInvariant(System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="format"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MefContrib.Models.Provider.ProviderImportDefinition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ProviderImportDefinition.#ctor(System.Reflection.MemberInfo,MefContrib.Models.Provider.ImportDescription)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.ProviderImportDefinition"/> class, using
+            the provided initial values.
+            </summary>
+            <param name="member"></param>
+            <param name="importDescription"></param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ProviderImportDefinition.GetConstraint(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets an expression that defines conditions that must be matched for the import 
+            described by the import definition to be satisfied.
+            </summary>
+            <returns>
+            A <see cref="T:System.Linq.Expressions.Expression"/> containing a <see cref="T:System.Func`2"/> 
+            that defines the conditions that must be matched for the 
+            <see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition"/> to be satisfied by an <see cref="T:System.ComponentModel.Composition.Primitives.Export"/>.
+            </returns>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ProviderImportDefinition.AllowDefault">
+            <summary>
+            Gets a value indicating whether the property or field will be set 
+            to its type's default value when an export with the contract name is not present in 
+            the container.
+            </summary>
+            <value>
+            <see langword="true"/> if the property, field or parameter will be set 
+            its type's default value when an export with the <see cref="!:ContractName"/> is not 
+            present in the <see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer"/>; otherwise, <see langword="false"/>. 
+            The default value is <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ProviderImportDefinition.Member">
+            <summary>
+            Gets the member that the import is defined for.
+            </summary>
+            <value>A <see cref="T:System.Reflection.MemberInfo"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ProviderImportDefinition.RequiredMetadata">
+            <summary>
+            Gets the metadata names of the export required by the import definition.
+            </summary>
+            <value>
+            An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.String"/> objects containing
+            the metadata names of the <see cref="T:System.ComponentModel.Composition.Primitives.Export"/> required by the 
+            <see cref="T:MefContrib.Models.Provider.ProviderImportDefinition"/>. The default is an empty 
+            <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.ObjectFactory">
+            <summary>
+            Defines the capabilities an object factory must conform to.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ObjectFactory.Create(System.Type,System.Object[])">
+            <summary>
+            Creates a new instance of the specifed type using the provided parameters.
+            </summary>
+            <param name="type">The type of the object to create.</param>
+            <param name="parameters">The parameters which should be passed to the new instance when it is being created.</param>
+            <returns>A new object instance of the type specified by the <paramref name="type"/> parameter.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationPartCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationPartCollection"/>
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationPartCollection.CreateNewElement">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationPartCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MefContrib.Models.Provider.Definitions.Attributed.AttributedDefinitionProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MefContrib.Models.Provider.DefinitionProvider">
+            <summary>
+            Defines the base functionality of a definition provider.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:MefContrib.Models.Provider.DefinitionProvider.Parts" -->
+        <member name="M:MefContrib.Models.Provider.Definitions.Attributed.AttributedDefinitionProvider.#ctor(System.Reflection.Assembly)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Attributed.AttributedDefinitionProvider"/> class, using
+            the specified <see cref="P:MefContrib.Models.Provider.Definitions.Attributed.AttributedDefinitionProvider.Assembly"/>.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Attributed.AttributedDefinitionProvider.GetExports(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="inspectedType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Attributed.AttributedDefinitionProvider.GetImports(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="inspectedType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Attributed.AttributedDefinitionProvider.GetPartDescriptions">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Attributed.AttributedDefinitionProvider.Assembly">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Attributed.AttributedDefinitionProvider.Descriptions">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Attributed.AttributedDefinitionProvider.Parts">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.DefinitionProviderPartCatalog`1">
+            <summary>
+            An immutable <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog"/> created from an <see cref="T:MefContrib.Models.Provider.DefinitionProvider"/>.
+            </summary>
+            <typeparam name="TProvider">The type of a class which implements the <see cref="T:MefContrib.Models.Provider.DefinitionProvider"/> interface.</typeparam>
+        </member>
+        <member name="M:MefContrib.Models.Provider.DefinitionProviderPartCatalog`1.#ctor(System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.DefinitionProviderPartCatalog`1"/> class, using
+            the provider specified by the <typeparamref name="TProvider"/> type and the values in the
+            <paramref name="parameters"/> collection parameter.
+            </summary>
+            <param name="parameters">The parameters used to initialize the provider.</param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.DefinitionProviderPartCatalog`1.#ctor(MefContrib.Models.Provider.DefinitionProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.DefinitionProviderPartCatalog`1"/> class, using
+            the specified <see cref="T:MefContrib.Models.Provider.DefinitionProvider"/> instance.
+            </summary>
+            <param name="provider">An <see cref="T:MefContrib.Models.Provider.DefinitionProvider"/> instance.</param>
+            <exception cref="T:System.ArgumentNullException">The specified value for the provider was null.</exception>
+            <exception cref="T:System.InvalidCastException">The type of the specified provider instance did not match the type specified by the generic parameter <typeparamref name="TProviderType"/> of the catalog.</exception>
+        </member>
+        <member name="T:MefContrib.Models.Provider.ComposableMethod">
+            <summary>
+            Provides an abstraction for working with a method on a reflection level.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ComposableMethod.#ctor(System.Reflection.MemberInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.ComposableMethod"/> class
+            for the specified <see cref="T:System.Reflection.MemberInfo"/>.
+            </summary>
+            <param name="member">The member to make composable.</param>
+            <exception cref="T:System.InvalidOperationException">The specified value for the member parameter was not a <see cref="T:System.Reflection.MethodInfo"/> instance.</exception>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMethod.IsLazyType">
+            <summary>
+            Gets a value indicating whether or not type of the <see cref="T:MefContrib.Models.Provider.ComposableMethod"/> is of a lazy type or not.
+            </summary>
+            <value><see langword="true"/> if it is of a known lazy type; otherwise <see langword="false"/>.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMethod.IsReadable">
+            <summary>
+            Gets a value indicating whether or not a value can be retrieved from the member.
+            </summary>
+            <value><see langword="true" /> if a value can be retrieved; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMethod.IsInstanceNeeded">
+            <summary>
+            Gets a value indicating whether or not an instance is needed for the value to be retrieved or assigned.
+            </summary>
+            <value><see langword="true" /> if an instance is needed; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMethod.IsWritable">
+            <summary>
+            Gets a value indicating whether or not a value can be assigned to the member.
+            </summary>
+            <value><see langword="true" /> if a value can be assigned; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMethod.Method">
+            <summary>
+            Gets the reference to the method.
+            </summary>
+            <value>A <see cref="T:System.Reflection.MethodInfo"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableMethod.ReturnType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of the return value of the <see cref="T:MefContrib.Models.Provider.ComposableType"/>.
+            </summary>
+            <value>A <see cref="T:System.Type"/> object.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.ProviderExportDefinition">
+            <summary>
+            Defines an export required by a <see cref="T:MefContrib.Models.Provider.ProviderComposablePart"/> object.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ProviderExportDefinition.#ctor(System.Reflection.MemberInfo,MefContrib.Models.Provider.ExportDescription)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.ProviderExportDefinition"/> class, 
+            using the specified values to define the export.
+            </summary>
+            <param name="member">The member that the exort is associated with.</param>
+            <param name="exportDescription"></param>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ProviderExportDefinition.Member">
+            <summary>
+            Gets the member that the export associated with.
+            </summary>
+            <value>A <see cref="T:System.Reflection.MemberInfo"/> object.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExport.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExport"/> class.
+            </summary>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExport.ContractName">
+            <summary>
+            Gets or sets the name of the contract.
+            </summary>
+            <value>A string containing the name of the contract.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExport.ContractType">
+            <summary>
+            Gets or sets the type of the contract.
+            </summary>
+            <value>A string containing the type of the contract.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExport.Member">
+            <summary>
+            Gets or sets the name of the member.
+            </summary>
+            <value>A string containing the name of the member.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationExport.Metadata">
+            <summary>
+            Gets a collection of all the metadata defined for the <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationImport"/>.
+            </summary>
+            <value>A <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationMetadataCollection"/> object.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.Definitions.Configurable.ConfigurableDefinitionProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Configurable.ConfigurableDefinitionProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.ConfigurableDefinitionProvider"/> class, using
+            the specified configuration section name.
+            </summary>
+            <param name="configurationSectionName">The name of the configuration section which contains the definitions.</param>
+            <exception cref="T:System.ArgumentNullException">The value of the <paramref name="configurationSectionName"/> parameter cannot be null or empty.</exception>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.ConfigurableDefinitionProvider.ConfigurationSectionName">
+            <summary>
+            Gets the name of the configuration section which is being used by the <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.ConfigurableDefinitionProvider"/>.
+            </summary>
+            <value>A <see cref="T:System.String"/> containing the name of the configuration section.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.ConfigurableDefinitionProvider.Parts">
+            <summary>
+            Gets a list of all discovered parts.
+            </summary>
+            <value>An <see cref="T:System.Linq.IQueryable`1"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Configurable.ConfigurableDefinitionProvider.ConfigurationSection">
+            <summary>
+            Gets or sets the reference to the configuration section.
+            </summary>
+            <value>A <see cref="T:MefContrib.Models.Provider.Definitions.Configurable.PartCatalogConfigurationSection"/> object.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.Definitions.Attributed.ImportableAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Attributed.ImportableAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Attributed.ImportableAttribute"/> class, using
+            the provided contract type.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Attributed.ImportableAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Attributed.ImportableAttribute"/> class, using
+            the provided contract type.
+            </summary>
+            <param name="contractType"></param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Attributed.ImportableAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Attributed.ImportableAttribute"/> class, using
+            the provided contract name.
+            </summary>
+            <param name="contractName"></param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Attributed.ImportableAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Attributed.ImportableAttribute"/> class, using
+            the provided contract name.
+            </summary>
+            <param name="contractName"></param>
+            <param name="contractType"></param>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Attributed.ImportableAttribute.AllowDefault">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Attributed.ImportableAttribute.ContractName">
+            <summary>
+            Gets the name of the contract.
+            </summary>
+            <value>A <see cref="T:System.String"/> containing the name of the contract.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Attributed.ImportableAttribute.ContractType">
+            <summary>
+            Gets the contract type that is exported by the member that this attribute is attached to.
+            </summary>
+        </member>
+        <member name="T:MefContrib.Models.Provider.Validation.RequireExtension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Validation.RequireExtension.Require``1(``0,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T">The type of the argument which it going to be validated.</typeparam>
+            <param name="target"></param>
+            <param name="name"></param>
+            <returns>A <see cref="T:MefContrib.Models.Provider.Validation.Validator`1"/> object.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.MemberInfoServices.GetMemberInfo(System.String,System.String)">
+            <summary>
+            Gets a <see cref="T:System.Reflection.MemberInfo"/> for the specified member.
+            </summary>
+            <param name="typeName">A <see cref="T:System.String"/> containing the fully-qualified name of the type.</param>
+            <param name="memberName">A <see cref="T:System.String"/> containing the name of the member.</param>
+            <returns>A <see cref="T:System.Reflection.MemberInfo"/> object.</returns>
+            <remarks>Passing in <see langword="null"></see> to the <paramref name="memberName"/> parameter will return the <see cref="T:System.Reflection.MemberInfo"/> for the entire type.</remarks>
+        </member>
+        <member name="T:MefContrib.Models.Provider.MemberInfoExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.MemberInfoExtensions.GetCardinality(System.Reflection.MemberInfo,System.Boolean)">
+            <summary>
+            Returns the cardinality of the provided member.
+            </summary>
+            <param name="member"></param>
+            <param name="allowDefault"><see langword="true" /> if the default value of the member can be used if no exports match; otherwise <see langword="false" />.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.MemberInfoExtensions.ToComposableMember(System.Reflection.MemberInfo)">
+            <summary>
+            Creates a <see cref="T:MefContrib.Models.Provider.ComposableMember"/> for the specified <see cref="T:System.Reflection.MemberInfo"/> instance.
+            </summary>
+            <param name="member">The <see cref="T:System.Reflection.MemberInfo"/> instance to create the <see cref="T:MefContrib.Models.Provider.ComposableMember"/> for.</param>
+            <returns>A <see cref="T:MefContrib.Models.Provider.ComposableMember"/> instance.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator.#ctor(MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator"/> class, using
+            the specified <see cref="N:MefContrib.Models.Provider"/> instance.
+            </summary>
+            <param name="provider">The <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider"/> which is being decorated for an export.</param>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator.AddMetadata(System.String,System.Object)">
+            <summary>
+            Assigns metadata to the current <see cref="T:MefContrib.Models.Provider.ExportDescription"/> which is being defined by the <see cref="N:MefContrib.Models.Provider"/>.
+            </summary>
+            <param name="name">The name of the metadata.</param>
+            <param name="value">The value of the metadata.</param>
+            <returns>An <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator"/> object.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator.WithContract(System.String)">
+            <summary>
+            Assigns a contract to the current <see cref="T:MefContrib.Models.Provider.ExportDescription"/>.
+            </summary>
+            <param name="contract">A <see cref="T:System.String"/> containing the contract.</param>
+            <returns>An <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator"/> object.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator.WithContract``1">
+            <summary>
+            Assigns a contract to the current <see cref="T:MefContrib.Models.Provider.ExportDescription"/>.
+            </summary>
+            <typeparam name="TContract">The <see cref="T:System.Type"/> to use as the contract.</typeparam>
+            <returns>An <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator"/> object.</returns>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator.WithContract``1(System.String)">
+            <summary>
+            Assigns a contract to the current <see cref="T:MefContrib.Models.Provider.ExportDescription"/>.
+            </summary>
+            <param name="contract">A <see cref="T:System.String"/> containing the contract.</param>
+            <returns>An <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator"/> object.</returns>
+        </member>
+        <member name="T:MefContrib.Models.Provider.DefaultObjectFactory">
+            <summary>
+            A default object factory which creates plain instances from the specified type, using
+            the provided parameters to initialize the new instance.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.DefaultObjectFactory.Create(System.Type,System.Object[])">
+            <summary>
+            Creates a new instance of the specifed type using the provided parameters.
+            </summary>
+            <param name="type">The type of the object to create.</param>
+            <param name="parameters">An array of parameters to pass to object when it's being created.</param>
+            <returns>A new object instance of the type specified by the <paramref name="type"/> parameter.</returns>
+        </member>
+        <member name="T:MefContrib.Models.Provider.ComposableProperty">
+            <summary>
+            Provides an abstraction for working with a property on a reflection level.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.ComposableProperty.#ctor(System.Reflection.MemberInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.ComposableProperty"/> class
+            for the specified <see cref="T:System.Reflection.MemberInfo"/>.
+            </summary>
+            <param name="member">The member to make composable.</param>
+            <exception cref="T:System.InvalidOperationException">The specified value for the member parameter was not a <see cref="T:System.Reflection.PropertyInfo"/> instance.</exception>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableProperty.IsLazyType">
+            <summary>
+            Gets a value indicating whether or not type of the <see cref="T:MefContrib.Models.Provider.ComposableProperty"/> is of a lazy type or not.
+            </summary>
+            <value><see langword="true"/> if it is of a known lazy type; otherwise <see langword="false"/>.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableProperty.IsReadable">
+            <summary>
+            Gets a value indicating whether or not a value can be retrieved from the member.
+            </summary>
+            <value><see langword="true" /> if a value can be retrieved; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableProperty.IsInstanceNeeded">
+            <summary>
+            Gets a value indicating whether or not an instance is needed for the value to be retrieved or assigned.
+            </summary>
+            <value><see langword="true" /> if an instance is needed; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableProperty.IsWritable">
+            <summary>
+            Gets a value indicating whether or not a value can be assigned to the member.
+            </summary>
+            <value><see langword="true" /> if a value can be assigned; otherwise <see langword="false" />.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableProperty.Property">
+            <summary>
+            Gets the reference to the property.
+            </summary>
+            <value>A <see cref="T:System.Reflection.PropertyInfo"/> object.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.ComposableProperty.ReturnType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of the return value of the <see cref="T:MefContrib.Models.Provider.ComposableProperty"/>.
+            </summary>
+            <value>A <see cref="T:System.Type"/> object.</value>
+        </member>
+        <member name="T:MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider.Export``1">
+            <summary>
+            Registers an export with no return value.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> that the export is registered for.</typeparam>
+            <returns>A <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator"/> object.</returns>
+            <remarks>This overload handles methods with no return (void) value.</remarks>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider.Export``1(System.Linq.Expressions.Expression{System.Action{``0}})">
+            <summary>
+            Registers an export with no return value.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> that the export is registered for.</typeparam>
+            <param name="exportExpression">A lambda expression used to identify the export.</param>
+            <returns>A <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator"/> object.</returns>
+            <remarks>This overload handles methods with no return (void) value.</remarks>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider.Export``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Registers an export with a return value.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> that the export is being registered for.</typeparam>
+            <param name="exportExpression">A lambda expression used to identify the export.</param>
+            <returns>A <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ExportDecorator"/> object.</returns>
+            <remarks>This overload handled properties, fields, methods with a return value and classes.</remarks>
+        </member>
+        <member name="M:MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider.Import``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Registers an import.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> that the import is being registered for.</typeparam>
+            <param name="importExpression">A lambda expression used to identify the import.</param>
+            <returns>A <see cref="T:MefContrib.Models.Provider.Definitions.Fluent.ImportDecorator"/></returns> object.
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider.Descriptions">
+            <summary>
+            Gets a list of the <see cref="T:MefContrib.Models.Provider.PartDescription"/> objected which is known by the provider.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.List`1"/> collection, containing <see cref="T:MefContrib.Models.Provider.PartDescription"/> objects.</value>
+        </member>
+        <member name="P:MefContrib.Models.Provider.Definitions.Fluent.FluentDefinitionProvider.Parts">
+            <summary>
+            Gets a list of the <see cref="T:MefContrib.Models.Provider.PartDescription"/> objected which is known by the provider.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.IEnumerable`1"/> collection, containing <see cref="T:MefContrib.Models.Provider.PartDescription"/> objects.</value>
+        </member>
+    </members>
+</doc>
