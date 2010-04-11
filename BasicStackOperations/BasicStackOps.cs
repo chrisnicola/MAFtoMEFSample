@@ -7,6 +7,7 @@ using WPFCalculator.Contracts;
 
 namespace BasicStackOperations
 {
+	  [Calculator(Name = "Stack Operations")]
     public class BasicStackOps : ICalculator
     {
         double _current;

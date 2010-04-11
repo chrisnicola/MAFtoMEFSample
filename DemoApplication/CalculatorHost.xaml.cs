@@ -3,6 +3,7 @@ using System.AddIn.Hosting;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
+using System.Linq;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,7 +21,7 @@ namespace DemoApplication
 	public partial class CalculatorHost : Window
 	{
 		[ImportMany]
-		private IList<ICalculator> _calcs = new List<ICalculator>();
+		private IEnumerable<Lazy<ICalculator, ICalculatorMetadata>> _calcs;
 
 		[ImportMany]
 		private IEnumerable<IVisualCalculator> _viscalcs;
@@ -113,14 +114,14 @@ namespace DemoApplication
 
 		private void RefreshAddIns_Click(object sender, RoutedEventArgs e)
 		{
-			var calcs = new List<ICalculator>();
-			calcs.AddRange(_calcs);
-			foreach (ICalculator calc in calcs)
-			{
-				UnloadAddIn(calc);
-			}
-			AddInMenuList.Items.Clear();
-			LoadAddIns();
+			//var calcs = new List<ICalculator>();
+			//calcs.AddRange(_calcs);
+			//foreach (ICalculator calc in calcs)
+			//{
+			//  UnloadAddIn(calc);
+			//}
+			//AddInMenuList.Items.Clear();
+			//LoadAddIns();
 		}
 
 		private void CalculatorVisual_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -129,10 +130,10 @@ namespace DemoApplication
 
 		private void UnloadAllAddIns()
 		{
-			//Actions.Children.Clear();
-			Actions.Items.Clear();
-			_calcs.Clear();
-			CalculatorVisual.Children.Clear();
+			////Actions.Children.Clear();
+			//Actions.Items.Clear();
+			//_calcs.Clear();
+			//CalculatorVisual.Children.Clear();
 		}
 
 		private void PerformFullGC()
@@ -164,7 +165,8 @@ namespace DemoApplication
 
 		private void UpdateStack()
 		{
-			StackChanged.Invoke(this, new StackChangedEventArgs(Stack.Items.Count));
+			if (StackChanged != null)
+				StackChanged.Invoke(this, new StackChangedEventArgs(Stack.Items.Count));
 		}
 
 
@@ -214,21 +216,19 @@ namespace DemoApplication
 		//	var calcs = container.GetExportedValues<ICalculator>();
 			container.ComposeParts(this);
 			
-			foreach (ICalculator calc in _calcs)
+			foreach (var lazyCalc in _calcs)
 			{
-				InitAddIn(calc, true);
+				InitAddIn(lazyCalc, true);
 			}
 		}
 
-		private void InitAddIn(ICalculator calc, bool addMenu)
+		private void InitAddIn(Lazy<ICalculator,ICalculatorMetadata> lazyCalc, bool addMenu)
 		{
-			Actions.Items.Add(new ActionLayout(calc, this));
+			//Actions.Items.Add(new ActionLayout(lazyCalc.Value, this));
 			if (addMenu)
 			{
 				var cb = new CheckBox();
-				cb.Content = calc.Name;
-				cb.IsChecked = true;
-				cb.Tag = calc;
+				cb.Content = lazyCalc.Metadata.Name;
 				cb.Checked += new RoutedEventHandler(cb_Checked);
 				cb.Unchecked += new RoutedEventHandler(cb_Unchecked);
 				AddInMenuList.Items.Add(cb);
@@ -237,6 +237,11 @@ namespace DemoApplication
 
 		private void cb_Unchecked(object sender, RoutedEventArgs e)
 		{
+			var cb = (CheckBox)sender;
+			var lazyCalc = _calcs.Single(lc => lc.Metadata.Name.Equals(cb.Content));
+			UnloadAddIn(lazyCalc.Value);
+			
+			/*
 			var calc = (ICalculator) ((CheckBox) sender).Tag;
 			AddInController controller = AddInController.GetAddInController(calc);
 			AddInToken token = controller.Token;
@@ -244,15 +249,16 @@ namespace DemoApplication
 			UnloadAddIn(calc);
 			calc = null;
 			_toUnload.Add(controller.AppDomain);
+			 * */
 		}
 
 		private void cb_Checked(object sender, RoutedEventArgs e)
 		{
-			var token = (AddInToken) ((FrameworkElement) sender).Tag;
-			var calc = token.Activate<ICalculator>(AddInSecurityLevel.Internet);
-			_calcs.Add(calc);
-			((FrameworkElement) sender).Tag = calc;
-			InitAddIn(calc, false);
+			var cb = (CheckBox)sender;
+			var lazyCalc = _calcs.Single(lc => lc.Metadata.Name.Equals(cb.Content));
+			Actions.Items.Add(new ActionLayout(lazyCalc.Value, this));
+			//((FrameworkElement) sender).Tag = calc;
+			//InitAddIn(calc, false);
 		}
 
 		private void UnloadAddIn(ICalculator calc)
@@ -268,7 +274,6 @@ namespace DemoApplication
 			}
 			calcsAl.Calculator = null;
 			Actions.Items.Remove(calcsAl);
-			_calcs.Remove(calc);
 			CalculatorVisual.Children.Clear();
 		}
 
