@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
+﻿using System.Collections.Generic;
 
-namespace WPFCalculator.Contracts {
-	[InheritedExport]
+namespace WPFCalculator.Contracts
+{
 	public interface ICalculator
 	{
-		IList<IOperation> Operations { get;}
+		IList<IOperation> Operations { get; }
 		double Operate(IOperation op, double[] operands);
-		string Name { get;}
+		string Name { get; }
 	}
 }

@@ -58,7 +58,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculatorAttribute.cs" />
     <Compile Include="ICalculator.cs" />
+    <Compile Include="ICalculatorMetadata.cs" />
     <Compile Include="IOperation.cs" />
     <Compile Include="IVisualCalculator.cs" />
     <Compile Include="Operation.cs" />
