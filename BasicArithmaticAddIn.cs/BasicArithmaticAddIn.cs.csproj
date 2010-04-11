@@ -24,7 +24,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\output\addins\BasicArithmaticAddIn\</OutputPath>
+    <OutputPath>..\output\addins\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -59,6 +59,7 @@
     <ProjectReference Include="..\WPFCalculator.Contracts\WPFCalculator.Contracts.csproj">
       <Project>{051F298C-FDA4-45C5-B400-7872CA7CC0D4}</Project>
       <Name>WPFCalculator.Contracts</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
