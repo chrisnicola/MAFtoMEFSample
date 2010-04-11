@@ -113,13 +113,13 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="background.bmp" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\WPFCalculator.Contracts\WPFCalculator.Contracts.csproj">
       <Project>{051F298C-FDA4-45C5-B400-7872CA7CC0D4}</Project>
       <Name>WPFCalculator.Contracts</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="background.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

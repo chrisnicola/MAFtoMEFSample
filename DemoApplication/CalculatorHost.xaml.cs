@@ -1,6 +1,8 @@
 ﻿using System;
 using System.AddIn.Hosting;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
+using System.ComponentModel.Composition.Hosting;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,8 +19,12 @@ namespace DemoApplication
 	/// </summary>
 	public partial class CalculatorHost : Window
 	{
-		
-		private IList<ICalculator> _calcs;
+		[ImportMany]
+		private IList<ICalculator> _calcs = new List<ICalculator>();
+
+		[ImportMany]
+		private IEnumerable<ICalculator> _calc2;
+
 		private MemoryStatusDisplay _memDisp;
 		private Timer _timer;
 		private List<AppDomain> _toUnload;
@@ -189,20 +195,24 @@ namespace DemoApplication
 
 		internal void LoadAddIns()
 		{
-			_calcs = new List<ICalculator>();
-			String path = Environment.CurrentDirectory;
-			AddInStore.Rebuild(path);
-			IList<AddInToken> tokens = AddInStore.FindAddIns(typeof (ICalculator), path);
-			IList<AddInToken> visualTokens = AddInStore.FindAddIns(typeof (IVisualCalculator), path);
-			foreach (AddInToken token in tokens)
-			{
-				_calcs.Add(token.Activate<ICalculator>(AddInSecurityLevel.FullTrust));
-			}
-			foreach (AddInToken token in visualTokens)
-			{
-				_calcs.Add(token.Activate<ICalculator>(AddInSecurityLevel.FullTrust));
-			}
-			Actions.Items.Clear();
+//			_calcs = new List<ICalculator>();
+//			String path = Environment.CurrentDirectory;
+//			AddInStore.Rebuild(path);
+//			IList<AddInToken> tokens = AddInStore.FindAddIns(typeof (ICalculator), path);
+//			IList<AddInToken> visualTokens = AddInStore.FindAddIns(typeof (IVisualCalculator), path);
+//			foreach (AddInToken token in tokens)
+//			{
+//				_calcs.Add(token.Activate<ICalculator>(AddInSecurityLevel.FullTrust));
+//			}
+//			foreach (AddInToken token in visualTokens)
+//			{
+//				_calcs.Add(token.Activate<ICalculator>(AddInSecurityLevel.FullTrust));
+//			}
+//			Actions.Items.Clear();
+			var catalog = new DirectoryCatalog(".\\addins");
+			var container = new CompositionContainer();
+			container.ComposeParts(this);
+			
 			foreach (ICalculator calc in _calcs)
 			{
 				InitAddIn(calc, true);
