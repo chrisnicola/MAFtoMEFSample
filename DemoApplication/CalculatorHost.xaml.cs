@@ -23,7 +23,7 @@ namespace DemoApplication
 		private IList<ICalculator> _calcs = new List<ICalculator>();
 
 		[ImportMany]
-		private IEnumerable<ICalculator> _calc2;
+		private IEnumerable<IVisualCalculator> _viscalcs;
 
 		private MemoryStatusDisplay _memDisp;
 		private Timer _timer;
@@ -210,7 +210,8 @@ namespace DemoApplication
 //			}
 //			Actions.Items.Clear();
 			var catalog = new DirectoryCatalog(".\\addins");
-			var container = new CompositionContainer();
+			var container = new CompositionContainer(catalog);
+		//	var calcs = container.GetExportedValues<ICalculator>();
 			container.ComposeParts(this);
 			
 			foreach (ICalculator calc in _calcs)
