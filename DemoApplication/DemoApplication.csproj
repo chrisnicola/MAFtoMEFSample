@@ -43,6 +43,10 @@
     <Reference Include="System.AddIn">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.ComponentModel.Composition, Version=2010.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -109,10 +113,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HostView\HostView.csproj">
-      <Project>{D589DDD6-6C12-4924-8831-3F312BBEA53E}</Project>
-      <Name>HostView</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WPFCalculator.Contracts\WPFCalculator.Contracts.csproj">
       <Project>{051F298C-FDA4-45C5-B400-7872CA7CC0D4}</Project>
       <Name>WPFCalculator.Contracts</Name>

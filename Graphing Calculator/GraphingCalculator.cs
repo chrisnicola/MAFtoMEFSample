@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
-using AddInView;
 using System.AddIn;
 using System.Windows.Controls;
 using System.Threading;
@@ -11,7 +10,7 @@ using WPFCalculator.Contracts;
 namespace GraphCalc
 {
     [AddIn("Graphing Calculator")]
-    public class GraphingCalculator : VisualCalculator
+    public class GraphingCalculator : IVisualCalculator
     {
         IList<IOperation> _ops;
         List<byte[]> _leaks;
@@ -33,18 +32,18 @@ namespace GraphCalc
         }
 
       
-        public override string Name
+        public string Name
         {
             get { return "Graphing Calculator"; }
         }
 
-        public override IList<IOperation> Operations
+        public IList<IOperation> Operations
         {
             get { return _ops; }
         }
 
 
-        public override FrameworkElement Operate(IOperation op, double[] operands)
+        public FrameworkElement Operate(IOperation op, double[] operands)
         {
            switch (op.Name)
             {

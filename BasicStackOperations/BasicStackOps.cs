@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.AddIn;
-using AddInView;
 using WPFCalculator.Contracts;
 
 namespace BasicStackOperations
 {
-    [AddIn("Stack Operations")]
-    public class BasicStackOps : Calculator
+    public class BasicStackOps : ICalculator
     {
         double _current;
         List<IOperation> _ops;
@@ -27,17 +25,17 @@ namespace BasicStackOperations
 					                            };
         }
 
-        public override string Name
+        public string Name
         {
             get { return "Stack Operations"; }
         }
 
-        public override IList<IOperation> Operations
+        public IList<IOperation> Operations
         {
             get { return _ops; }
         }
 
-        public override double Operate(IOperation op, double[] operands)
+        public double Operate(IOperation op, double[] operands)
         {
             
             switch (op.Name)

@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
-using HostView;
+using WPFCalculator.Contracts;
 
 [assembly: XmlnsDefinition("http://myapplication", "DemoApplication")]
 
@@ -10,17 +10,17 @@ namespace DemoApplication {
 	/// <summary>
 	/// Interaction logic for ActionLayout.xaml
 	/// </summary>
-	public partial class ActionLayout : System.Windows.Controls.UserControl {
-		private CalculatorBase _calc;
+	public partial class ActionLayout : UserControl {
+		private ICalculator _calc;
 		private CalculatorHost _app;
 		private EventHandler<StackChangedEventArgs> _stackChangedHandler;
 
 		public ActionLayout() {
-			InitializeComponent();
+			this.InitializeComponent();
 			_stackChangedHandler = new EventHandler<StackChangedEventArgs>(application_StackChanged);
 		}
 
-		public CalculatorBase Calculator {
+		public ICalculator Calculator {
 			get { return _calc; }
 			set {
 				_calc = value;
@@ -29,7 +29,9 @@ namespace DemoApplication {
 			}
 		}
 
-		public ActionLayout(CalculatorBase calc, CalculatorHost application) : this() {
+		public ActionLayout(ICalculator calc, CalculatorHost application)
+			: this()
+		{
 			_calc = calc;
 			_app = application;
 			this.Title.Text = calc.Name;
@@ -56,8 +58,8 @@ namespace DemoApplication {
 		}
 
 		private void b_Click(object sender, RoutedEventArgs e) {
-			Button b = (Button) sender;
-			Operation op = (Operation) b.Tag;
+			var b = (Button) sender;
+			var op = (Operation) b.Tag;
 			_app.Operate(_calc, op);
 		}
 	}

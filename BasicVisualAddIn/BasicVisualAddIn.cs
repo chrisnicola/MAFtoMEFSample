@@ -9,27 +9,26 @@ using WPFCalculator.Contracts;
 
 namespace BasicArithmaticAddIn.cs
 {
-    [System.AddIn.AddIn("Basic Visual")]
-    public class BasicVisual : AddInView.VisualCalculator
+    public class BasicVisual : IVisualCalculator
     {
         private IList<IOperation> _operations;
 
         public BasicVisual()
         {
-            _operations = new List<IOperation> {new AddInView.Operation("Graph", 5)};
+            _operations = new List<IOperation> {new Operation("Graph", 5)};
         }
 
-        public override string Name
+        public string Name
         {
             get { return "Basic Visual"; }
         }
 
-        public override IList<IOperation> Operations
+        public IList<IOperation> Operations
         {
             get { return _operations; }
         }
 
-        public override FrameworkElement Operate(IOperation op, double[] operands)
+        public FrameworkElement Operate(IOperation op, double[] operands)
         {
             switch (op.Name)
             {

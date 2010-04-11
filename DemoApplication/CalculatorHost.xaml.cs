@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Shapes;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.AddIn.Hosting;
 using System.Windows.Markup;
-using HostView;
+using WPFCalculator.Contracts;
 
 [assembly: XmlnsDefinition("http://foo", "DemoApplication")]
 namespace DemoApplication
@@ -24,7 +16,8 @@ namespace DemoApplication
     
     public partial class CalculatorHost : System.Windows.Window
     {
-        IList<CalculatorBase> _calcs;
+			[
+        IList<ICalculator> _calcs;
         List<AppDomain> _toUnload;
         MemoryStatusDisplay _memDisp;
         System.Timers.Timer _timer;
@@ -115,9 +108,9 @@ namespace DemoApplication
 
         void RefreshAddIns_Click(object sender, RoutedEventArgs e)
         {
-            List<CalculatorBase> calcs = new List<CalculatorBase>();
+            var calcs = new List<ICalculator>();
             calcs.AddRange(_calcs);
-            foreach (CalculatorBase calc in calcs)
+            foreach (ICalculator calc in calcs)
             {
                 UnloadAddIn(calc);
             }
@@ -202,27 +195,27 @@ namespace DemoApplication
 
         internal void LoadAddIns()
         {
-            _calcs = new List<CalculatorBase>();
+            _calcs = new List<ICalculator>();
             String path = Environment.CurrentDirectory;
             AddInStore.Rebuild(path);
-            IList<AddInToken> tokens = AddInStore.FindAddIns(typeof(Calculator), path);
-            IList<AddInToken> visualTokens = AddInStore.FindAddIns(typeof(VisualCalculator), path);
+            IList<AddInToken> tokens = AddInStore.FindAddIns(typeof(ICalculator), path);
+            IList<AddInToken> visualTokens = AddInStore.FindAddIns(typeof(IVisualCalculator), path);
             foreach (AddInToken token in tokens)
             {
-                _calcs.Add(token.Activate<CalculatorBase>(AddInSecurityLevel.FullTrust));               
+                _calcs.Add(token.Activate<ICalculator>(AddInSecurityLevel.FullTrust));               
             }
             foreach (AddInToken token in visualTokens)
             {
-                _calcs.Add(token.Activate<CalculatorBase>(AddInSecurityLevel.FullTrust));
+                _calcs.Add(token.Activate<ICalculator>(AddInSecurityLevel.FullTrust));
             }
             Actions.Items.Clear();
-            foreach (CalculatorBase calc in _calcs)
+            foreach (ICalculator calc in _calcs)
             {
                 InitAddIn(calc,true);
             }
         }
 
-        void InitAddIn(CalculatorBase calc, bool addMenu)
+        void InitAddIn(ICalculator calc, bool addMenu)
         {
             Actions.Items.Add(new ActionLayout(calc, this));
             if (addMenu)
@@ -239,7 +232,7 @@ namespace DemoApplication
 
         void cb_Unchecked(object sender, RoutedEventArgs e)
         {
-            CalculatorBase calc = (CalculatorBase) ((CheckBox)sender).Tag;
+            ICalculator calc = (ICalculator) ((CheckBox)sender).Tag;
             AddInController controller = AddInController.GetAddInController(calc);
             AddInToken token = controller.Token;
             ((CheckBox)sender).Tag = token;
@@ -251,13 +244,13 @@ namespace DemoApplication
         void cb_Checked(object sender, RoutedEventArgs e)
         {
             AddInToken token = (AddInToken)((FrameworkElement)sender).Tag;
-            CalculatorBase calc = token.Activate<CalculatorBase>(AddInSecurityLevel.Internet);
+            ICalculator calc = token.Activate<ICalculator>(AddInSecurityLevel.Internet);
             _calcs.Add(calc);
             ((FrameworkElement)sender).Tag = calc;
             InitAddIn(calc,false);
         }
 
-        void UnloadAddIn(CalculatorBase calc)
+        void UnloadAddIn(ICalculator calc)
         {
             ActionLayout calcsAl = null;
             foreach (ActionLayout al in Actions.Items)
@@ -274,7 +267,7 @@ namespace DemoApplication
             CalculatorVisual.Children.Clear();           
         }
 
-        internal void Operate(CalculatorBase calc, Operation op)
+        internal void Operate(ICalculator calc, Operation op)
         {
             double[] operands = new double[op.NumOperands];
             for (int i = 0; i < op.NumOperands; i++)
@@ -283,16 +276,16 @@ namespace DemoApplication
                 operands[i] = double.Parse(item.Content.ToString());
                 Stack.Items.RemoveAt(0);
             }
-            if (typeof(Calculator).IsAssignableFrom(calc.GetType()))
+            if (typeof(ICalculator).IsAssignableFrom(calc.GetType()))
             {
-                double result = ((Calculator)calc).Operate(op, operands);
+                double result = ((ICalculator)calc).Operate(op, operands);
                 ListViewItem newItem = new ListViewItem();
                 newItem.Content = result;
                 Stack.Items.Insert(0, newItem);
             }
             else
             {
-                UIElement visual = ((VisualCalculator)calc).Operate(op, operands);
+                UIElement visual = ((IVisualCalculator)calc).Operate(op, operands);
                 CalculatorVisual.Children.Clear();
                 CalculatorVisual.Children.Add(visual);
             }
