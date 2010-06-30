@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.AddIn;
 using WPFCalculator.Contracts;
 
 namespace BasicStackOperations
 {
-	  [Calculator(Name = "Stack Operations")]
-    public class BasicStackOps : ICalculator
+    [Calculator("Stack Operations")]
+    public class BasicStackOps : INumericCalculator
     {
         double _current;
         List<IOperation> _ops;

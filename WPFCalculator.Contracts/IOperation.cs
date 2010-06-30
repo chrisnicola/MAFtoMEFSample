@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.Composition;
+﻿
+
+using System.ComponentModel.Composition;
 
 namespace WPFCalculator.Contracts {
 	[InheritedExport]

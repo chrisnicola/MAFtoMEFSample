@@ -6,8 +6,11 @@ namespace WPFCalculator.Contracts
 	[MetadataAttribute, AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
 	public class CalculatorAttribute : ExportAttribute
 	{
-		public CalculatorAttribute() : base(typeof (ICalculator)) { }
+		public CalculatorAttribute(string name) : base(typeof (ICalculatorPlugin))
+		{
+		  Name = name;
+		}
 
-		public string Name { get; set; }
+	  public string Name { get; set; }
 	}
 }

@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using WPFCalculator.Contracts;
 
-namespace BasicArithmaticAddIn.cs
+namespace BasicVisualAddIn
 {
+    [Calculator("Basic Visual")]
     public class BasicVisual : IVisualCalculator
     {
-        private IList<IOperation> _operations;
+        private readonly IList<IOperation> _operations;
 
         public BasicVisual()
         {

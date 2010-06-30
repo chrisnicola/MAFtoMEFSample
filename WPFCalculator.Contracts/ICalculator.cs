@@ -2,10 +2,9 @@
 
 namespace WPFCalculator.Contracts
 {
-	public interface ICalculator
-	{
-		IList<IOperation> Operations { get; }
-		double Operate(IOperation op, double[] operands);
-		string Name { get; }
-	}
+  public interface ICalculatorPlugin
+  {
+    IList<IOperation> Operations { get; }
+    string Name { get; }
+  }
 }

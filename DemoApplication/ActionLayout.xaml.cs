@@ -11,7 +11,7 @@ namespace DemoApplication {
 	/// Interaction logic for ActionLayout.xaml
 	/// </summary>
 	public partial class ActionLayout : UserControl {
-		private ICalculator _calc;
+		private ICalculatorPlugin _calc;
 		private CalculatorHost _app;
 		private EventHandler<StackChangedEventArgs> _stackChangedHandler;
 
@@ -20,7 +20,7 @@ namespace DemoApplication {
 			_stackChangedHandler = new EventHandler<StackChangedEventArgs>(application_StackChanged);
 		}
 
-		public ICalculator Calculator {
+		public ICalculatorPlugin Calculator {
 			get { return _calc; }
 			set {
 				_calc = value;
@@ -29,7 +29,7 @@ namespace DemoApplication {
 			}
 		}
 
-		public ActionLayout(ICalculator calc, CalculatorHost application)
+		public ActionLayout(ICalculatorPlugin calc, CalculatorHost application)
 			: this()
 		{
 			_calc = calc;
@@ -37,7 +37,7 @@ namespace DemoApplication {
 			this.Title.Text = calc.Name;
 			foreach (Operation op in calc.Operations){
 				var b = new Button {Tag = op, Content = op.Name};
-				b.Click += new RoutedEventHandler(b_Click);
+				b.Click += b_Click;
 				Actions.Children.Add(b);
 			}
 			ValidateButtons(application.Stack.Items.Count);

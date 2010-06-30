@@ -4,8 +4,8 @@ using WPFCalculator.Contracts;
 
 namespace BasicArithmaticAddIn.cs
 {
-	[Calculator(Name="Basic Arithmetic")]
-	public class BasicArithmatic : ICalculator
+  [Calculator("Basic Arithmetic")]
+	public class BasicArithmatic : INumericCalculator
 	{
 		private readonly IList<IOperation> _operations;
 
@@ -27,7 +27,7 @@ namespace BasicArithmaticAddIn.cs
 			get { return "Basic Arithmatic"; }
 		}
 
-		public IList<IOperation> Operations
+    public IList<IOperation> Operations
 		{
 			get { return _operations; }
 		}

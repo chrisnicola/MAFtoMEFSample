@@ -4,10 +4,8 @@ using System.Windows;
 
 namespace WPFCalculator.Contracts {
 	[InheritedExport]
-	public interface IVisualCalculator
+	public interface IVisualCalculator : ICalculatorPlugin
 	{
-		IList<IOperation> Operations { get;}
 		FrameworkElement Operate(IOperation op, double[] operands);
-		string Name { get; }
 	}
 }
